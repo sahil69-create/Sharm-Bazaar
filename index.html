@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharmBazaar - Buy Your Lost Sharm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Sharm<span class="highlight">Bazaar</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#reviews">Testimonials</a></li>
+            <li><a href="#" onclick="alert('Contacting Sharm Support... Error: They are too shy to reply.')">Contact</a></li>
+        </ul>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h2>Where you can finally buy your lost <span class="sharm-text">Sharm</span></h2>
+            <p>Lost your sharm in online arguments? Parents scolding you? Don't worry! We have fresh stock.</p>
+            <a href="#products" class="cta-button">Refill Sharm Now</a>
+        </div>
+    </header>
+
+    <!-- Product Section -->
+    <section id="products" class="products">
+        <div class="section-title">
+            <h3>Choose Your Sharm Plan</h3>
+            <p class="category">Category: Self-Respect & Emotions</p>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Basic Plan -->
+            <div class="product-card">
+                <div class="badge">Bestseller</div>
+                <div class="product-image">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h4>Starter Sharm</h4>
+                <p class="price">₹999 <span class="original-price">₹2999</span></p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Basic politeness enabled</li>
+                    <li><i class="fas fa-check"></i> 10% Ego reduction</li>
+                    <li><i class="fas fa-check"></i> Works for family gatherings</li>
+                </ul>
+                <p class="stock-warning">Only <span class="stock-count">5</span> left!</p>
+                <button class="buy-btn" onclick="buySharm('Starter Sharm', 999)">Buy Now</button>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="product-card">
+                <div class="badge">Most Popular</div>
+                <div class="product-image">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h4>Premium Sharm</h4>
+                <p class="price">₹1999 <span class="original-price">₹4999</span></p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Instant Respect Boost</li>
+                    <li><i class="fas fa-check"></i> Auto-mute in arguments</li>
+                    <li><i class="fas fa-check"></i> Works on iOS & Android</li>
+                </ul>
+                <p class="stock-warning">Only <span class="stock-count">2</span> left!</p>
+                <button class="buy-btn" onclick="buySharm('Premium Sharm', 1999)">Buy Now</button>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="product-card">
+                <div class="badge">Limited Edition</div>
+                <div class="product-image">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h4>Ultra Pro Max Sharm</h4>
+                <p class="price">₹4999 <span class="original-price">₹9999</span></p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> God-level Humility</li>
+                    <li><i class="fas fa-check"></i> Relatives will love you</li>
+                    <li><i class="fas fa-check"></i> Side effect: Sudden silence</li>
+                </ul>
+                <p class="stock-warning">Only <span class="stock-count">1</span> left!</p>
+                <button class="buy-btn" onclick="buySharm('Ultra Pro Max Sharm', 4999)">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="details">
+        <div class="details-content">
+            <h3>Why Buy From Us?</h3>
+            <p>“Have you lost your sharm in online arguments, gaming chats, or real life? Don’t worry! Buy brand new Sharm today. Guaranteed instant respect, silent mode activation, and auto-mute in embarrassing situations.”</p>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h5>Instant Delivery</h5>
+                    <p>Via Digital Sharm Courier</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo-alt"></i>
+                    <h5>No Refunds</h5>
+                    <p>Once bought, stays forever</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-check"></i>
+                    <h5>100% Original</h5>
+                    <p>Sourced from Sanskari people</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <h3>Customer Testimonials</h3>
+        <p>Rated ⭐⭐⭐⭐⭐ by 12,345 fake customers</p>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>“Bro I ordered Sharm, feeling respectful already! My mom actually smiled at me today.”</p>
+                <div class="user">- Rahul from Delhi</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>“Best purchase of my life 😂. I stopped fighting in comment sections instantly.”</p>
+                <div class="user">- KeyboardWarrior99</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>“Delivery fast, ego reduced instantly! Highly recommended for politicians.”</p>
+                <div class="user">- Anonymous User</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Me a Coffee Section -->
+    <section class="coffee-section">
+        <div class="coffee-content">
+            <h3>Enjoyed the Prank? ☕</h3>
+            <p>If this website made you smile (or realize you have no sharm), consider supporting the creator!</p>
+            <div class="support-options">
+                <div class="support-card">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h4>Support via UPI</h4>
+                    <p class="upi-id" id="upiId">sahiljangra5556@okaxis</p>
+                    <button class="copy-btn" onclick="copyUPI()">
+                        <i class="fas fa-copy"></i> Copy UPI ID
+                    </button>
+                </div>
+                <div class="support-card">
+                    <i class="fab fa-paypal"></i>
+                    <h4>Support via PayPal</h4>
+                    <a href="https://www.paypal.me/ArunSingh2430" target="_blank" class="paypal-btn">
+                        Donate on PayPal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Footer -->
+    <footer>
+        <p>&copy; 2024 SharmBazaar. All rights reserved.</p>
+        <p class="disclaimer">⚠️ DISCLAIMER: This website is for comedy and demonstration purposes only. No real selling or buying. Please do not try to use real money.</p>
+    </footer>
+
+    <!-- Packing Modal -->
+    <div id="packingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="loader"></div>
+            <h3>Congratulations!</h3>
+            <p>Your <span id="selectedProduct">Sharm</span> is being packed...</p>
+            <p id="loadingText">Searching for remaining dignity...</p>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-content">
+            <span class="close-checkout">&times;</span>
+            <h3>Checkout</h3>
+            <div class="order-summary">
+                <p>Product: <strong id="checkoutProduct">Premium Sharm</strong></p>
+                <p>Total: <strong id="checkoutPrice">₹1999</strong></p>
+            </div>
+            <form id="paymentForm">
+                <label>Select Payment Method:</label>
+                <div class="payment-options">
+                    <label class="radio-container">
+                        <input type="radio" name="payment" checked>
+                        <span class="checkmark"></span> SharmPay
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="payment">
+                        <span class="checkmark"></span> Ego Wallet
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="payment">
+                        <span class="checkmark"></span> Respect UPI
+                    </label>
+                </div>
+                <button type="submit" class="pay-btn">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
