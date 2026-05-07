@@ -1,3 +1,19 @@
+// --- Initialization ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Add loaded class to body to reveal content
+    document.body.classList.add('loaded');
+    
+    // Initialize Lucide icons with a slight delay to prioritize main thread
+    if (window.lucide) {
+        if (window.requestIdleCallback) {
+            requestIdleCallback(() => lucide.createIcons());
+        } else {
+            setTimeout(() => lucide.createIcons(), 100);
+        }
+    }
+});
+
 // --- Navigation Functions ---
 
 function toggleMobileMenu() {
