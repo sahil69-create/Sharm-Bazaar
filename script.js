@@ -1,18 +1,23 @@
 // --- Initialization ---
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Add loaded class to body to reveal content
-    document.body.classList.add('loaded');
-    
-    // Initialize Lucide icons with a slight delay to prioritize main thread
-    if (window.lucide) {
-        if (window.requestIdleCallback) {
-            requestIdleCallback(() => lucide.createIcons());
-        } else {
-            setTimeout(() => lucide.createIcons(), 100);
-        }
+// reveal content immediately as script is already deferred
+document.body.classList.add('loaded');
+
+// Initialize Lucide icons with a delay to reduce Total Blocking Time (TBT)
+// Using requestIdleCallback for even better main thread management
+if (window.lucide) {
+    const initIcons = () => {
+        lucide.createIcons();
+    };
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            setTimeout(initIcons, 100);
+        });
+    } else {
+        setTimeout(initIcons, 300);
     }
-});
+}
 
 // --- Navigation Functions ---
 
