@@ -93,7 +93,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
-                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6" alt="SharmBazaar Logo" class="w-10 h-10 rounded-xl shadow-lg shadow-teal-500/20">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6" alt="SharmBazaar Logo" width="40" height="40" class="w-10 h-10 rounded-xl shadow-lg shadow-teal-500/20">
                     <span class="text-2xl font-extrabold tracking-tight">Sharm<span class="text-teal-600">Bazaar</span><span class="text-coral-500">.in</span></span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
@@ -101,10 +101,10 @@
                     <a href="#pricing" class="hover:text-teal-600 transition-colors">Products</a>
                     <a href="#calculator" class="hover:text-teal-600 transition-colors">Calculator</a>
                     <a href="#testimonials" class="hover:text-teal-600 transition-colors">Reviews</a>
-                    <a href="https://kryzome.vercel.app/" target="_blank" class="bg-teal-600 text-white px-5 py-2.5 rounded-full hover:bg-teal-700 transition-all shadow-lg shadow-teal-500/30">Owner Profile</a>
+                    <a href="https://kryzome.vercel.app/" target="_blank" rel="noopener" class="bg-teal-600 text-white px-5 py-2.5 rounded-full hover:bg-teal-700 transition-all shadow-lg shadow-teal-500/30">Owner Profile</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="p-2 text-slate-600 hover:bg-teal-50 rounded-lg transition-colors">
+                    <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="p-2 text-slate-600 hover:bg-teal-50 rounded-lg transition-colors">
                         <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
                         <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
                     </button>
@@ -126,6 +126,7 @@
         </div>
     </nav>
 
+    <main>
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -151,7 +152,7 @@
             </div>
             <div class="relative">
                 <div class="absolute inset-0 bg-teal-500/10 blur-3xl rounded-full"></div>
-                <img src="https://illustrations.popsy.co/teal/falling.svg" alt="Lost Sharm Illustration" class="relative z-10 w-full max-w-lg mx-auto transform hover:rotate-3 transition-transform duration-500">
+                <img src="https://illustrations.popsy.co/teal/falling.svg" alt="Lost Sharm Illustration" width="512" height="512" class="relative z-10 w-full max-w-lg mx-auto transform hover:rotate-3 transition-transform duration-500">
             </div>
         </div>
     </section>
@@ -202,20 +203,20 @@
                         </div>
                         <div>
                             <h3 class="text-2xl font-bold text-white">Pro Max Sharm</h3>
-                            <p class="text-teal-100 text-sm mt-1">The relative's favorite</p>
+                            <p class="text-white text-sm mt-1 opacity-90">The relative's favorite</p>
                         </div>
                         <div class="text-4xl font-extrabold text-white">₹1999</div>
                         <ul class="space-y-4">
                             <li class="flex items-center space-x-3">
-                                <i data-lucide="check-circle-2" class="text-teal-200 w-5 h-5"></i>
+                                <i data-lucide="check-circle-2" class="text-white w-5 h-5"></i>
                                 <span>Instant discount codes</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <i data-lucide="check-circle-2" class="text-teal-200 w-5 h-5"></i>
+                                <i data-lucide="check-circle-2" class="text-white w-5 h-5"></i>
                                 <span>Accommodates arguments</span>
                             </li>
                             <li class="flex items-center space-x-3">
-                                <i data-lucide="check-circle-2" class="text-teal-200 w-5 h-5"></i>
+                                <i data-lucide="check-circle-2" class="text-white w-5 h-5"></i>
                                 <span>Works on CG & Android</span>
                             </li>
                         </ul>
@@ -439,6 +440,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="py-12 bg-slate-950 text-slate-500">
@@ -455,10 +457,10 @@
                 </div>
                 
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="youtube"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="linkedin"></i></a>
+                    <a href="#" aria-label="Facebook" class="hover:text-white transition-colors"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-white transition-colors"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="YouTube" class="hover:text-white transition-colors"><i data-lucide="youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="hover:text-white transition-colors"><i data-lucide="linkedin"></i></a>
                 </div>
 
                 <div class="text-center md:text-right space-y-2">
