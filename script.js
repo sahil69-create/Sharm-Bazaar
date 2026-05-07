@@ -1,3 +1,23 @@
+// --- Navigation Functions ---
+
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    const isHidden = mobileMenu.classList.contains('hidden');
+    
+    if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+    } else {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    }
+}
+
 // State for eligibility form
 let selectedOptions = {
     1: null,
