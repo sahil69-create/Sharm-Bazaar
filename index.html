@@ -92,8 +92,24 @@
                     <a href="#testimonials" class="hover:text-teal-600 transition-colors">Reviews</a>
                     <a href="https://kryzome.vercel.app/" target="_blank" class="bg-teal-600 text-white px-5 py-2.5 rounded-full hover:bg-teal-700 transition-all shadow-lg shadow-teal-500/30">Owner Profile</a>
                 </div>
-                <div class="md:hidden">
-                    <i data-lucide="menu" class="w-6 h-6 text-slate-600"></i>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="p-2 text-slate-600 hover:bg-teal-50 rounded-lg transition-colors">
+                        <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-teal-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#" onclick="toggleMobileMenu()" class="block px-4 py-3 text-base font-semibold text-slate-600 hover:text-teal-600 hover:bg-teal-50 rounded-xl transition-all">Home</a>
+                <a href="#pricing" onclick="toggleMobileMenu()" class="block px-4 py-3 text-base font-semibold text-slate-600 hover:text-teal-600 hover:bg-teal-50 rounded-xl transition-all">Products</a>
+                <a href="#calculator" onclick="toggleMobileMenu()" class="block px-4 py-3 text-base font-semibold text-slate-600 hover:text-teal-600 hover:bg-teal-50 rounded-xl transition-all">Calculator</a>
+                <a href="#testimonials" onclick="toggleMobileMenu()" class="block px-4 py-3 text-base font-semibold text-slate-600 hover:text-teal-600 hover:bg-teal-50 rounded-xl transition-all">Reviews</a>
+                <div class="pt-4 px-4">
+                    <a href="https://kryzome.vercel.app/" target="_blank" class="block w-full text-center bg-teal-600 text-white px-5 py-3 rounded-xl font-bold hover:bg-teal-700 transition-all shadow-lg shadow-teal-500/30">Owner Profile</a>
                 </div>
             </div>
         </div>
