@@ -27,10 +27,8 @@
     <meta property="twitter:image" content="https://sharmbazaar.in/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6">
+    <link rel="apple-touch-icon" href="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -83,10 +81,8 @@
     <nav class="fixed top-0 w-full z-50 glass">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-2">
-                    <div class="bg-teal-500 p-2 rounded-lg">
-                        <i data-lucide="shopping-bag" class="text-white w-6 h-6"></i>
-                    </div>
+                <div class="flex items-center space-x-3">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6" alt="SharmBazaar Logo" class="w-10 h-10 rounded-xl shadow-lg shadow-teal-500/20">
                     <span class="text-2xl font-extrabold tracking-tight">Sharm<span class="text-teal-600">Bazaar</span><span class="text-coral-500">.in</span></span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
@@ -105,28 +101,30 @@
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4">
-        <div class="max-w-5xl mx-auto text-center space-y-8">
-            <div class="inline-flex items-center space-x-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-bold animate-pulse">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-                <span>Fresh Stock Arrived: Sourced from Sanskari People</span>
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-bold animate-pulse">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Fresh Stock Arrived: Sourced from Sanskari People</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                    Where you can finally <br>
+                    <span class="gradient-text">buy your lost Sharm</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                    Lost your sharm in online arguments? Parents scolding you? <br class="hidden md:block">
+                    Don’t worry — we have fresh stock. Re-gain your respect in one click.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#pricing" class="w-full sm:w-auto bg-teal-600 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:bg-teal-700 hover:scale-105 transition-all shadow-xl shadow-teal-500/20 flex items-center justify-center space-x-2">
+                        <span>Refill Stock Now</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                Where you can finally <br>
-                <span class="gradient-text">buy your lost Sharm</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-                Lost your sharm in online arguments? Parents scolding you? <br class="hidden md:block">
-                Don’t worry — we have fresh stock. Re-gain your respect in one click.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#pricing" class="w-full sm:w-auto bg-teal-600 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:bg-teal-700 hover:scale-105 transition-all shadow-xl shadow-teal-500/20 flex items-center justify-center space-x-2">
-                    <span>Refill Stock Now</span>
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a href="#calculator" class="w-full sm:w-auto bg-white text-slate-900 px-8 py-4 rounded-2xl text-lg font-bold border-2 border-slate-100 hover:border-teal-200 transition-all flex items-center justify-center space-x-2">
-                    <i data-lucide="calculator" class="w-5 h-5"></i>
-                    <span>Check Shamelessness Level</span>
-                </a>
+            <div class="relative">
+                <div class="absolute inset-0 bg-teal-500/10 blur-3xl rounded-full"></div>
+                <img src="https://illustrations.popsy.co/teal/falling.svg" alt="Lost Sharm Illustration" class="relative z-10 w-full max-w-lg mx-auto transform hover:rotate-3 transition-transform duration-500">
             </div>
         </div>
     </section>
