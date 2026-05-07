@@ -8,8 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://api.dicebear.com">
-    <link rel="preconnect" href="https://illustrations.popsy.co">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://illustrations.popsy.co">
 
     <title>SharmBazaar.in - Buy Your Lost Sharm</title>
     
@@ -46,13 +49,9 @@
     <link rel="icon" type="image/png" href="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6">
     <link rel="apple-touch-icon" href="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6">
     
-    <!-- Critical CSS & Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Critical Styles & Defer Scripts -->
     <script>
-        tailwind.config = {
+        window.tailwindConfig = {
             theme: {
                 extend: {
                     colors: {
@@ -63,12 +62,21 @@
                     animation: { 'bounce-slow': 'bounce 3s infinite' }
                 }
             }
-        }
+        };
     </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp" defer></script>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    
     <style>
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        /* Essential styles to prevent massive FOUC while Tailwind loads */
+        :root { --teal-600: #0d9488; --teal-50: #f0fdfa; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; opacity: 0; transition: opacity 0.3s ease-in; }
+        body.loaded { opacity: 1; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
         .gradient-text { background: linear-gradient(135deg, #14b8a6 0%, #ff6f61 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .sharm-meter-fill { transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .sharm-meter-fill { transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
     </style>
 </head>
 <body class="bg-teal-50 text-slate-900 font-sans antialiased">
@@ -78,7 +86,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
-                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6" alt="SharmBazaar Logo" width="40" height="40" loading="lazy" class="w-10 h-10 rounded-xl shadow-lg shadow-teal-500/20">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Sharm&backgroundColor=14b8a6" alt="SharmBazaar Logo" width="40" height="40" loading="lazy" decoding="async" class="w-10 h-10 rounded-xl shadow-lg shadow-teal-500/20">
                     <span class="text-2xl font-extrabold tracking-tight">Sharm<span class="text-teal-600">Bazaar</span><span class="text-coral-500">.in</span></span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
@@ -137,7 +145,7 @@
             </div>
             <div class="relative">
                 <div class="absolute inset-0 bg-teal-500/10 blur-3xl rounded-full"></div>
-                <img src="https://illustrations.popsy.co/teal/falling.svg" alt="Lost Sharm Illustration" width="512" height="512" fetchpriority="high" class="relative z-10 w-full max-w-lg mx-auto transform hover:rotate-3 transition-transform duration-500">
+                <img src="https://illustrations.popsy.co/teal/falling.svg" alt="Lost Sharm Illustration" width="512" height="512" fetchpriority="high" decoding="async" class="relative z-10 w-full max-w-lg mx-auto transform hover:rotate-3 transition-transform duration-500">
             </div>
         </div>
     </section>
@@ -528,11 +536,7 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js"></script>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
