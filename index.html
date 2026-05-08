@@ -472,7 +472,7 @@
             </div>
 
             <!-- Eligibility Form -->
-            <div id="eligibility-form" class="p-8 flex flex-col gap-8">
+            <div id="eligibility-form" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-4">
                     <p class="font-bold text-slate-800">1. What time did you wake up today?</p>
                     <div class="grid grid-cols-2 gap-3">
@@ -502,11 +502,13 @@
                     </div>
                 </div>
 
-                <button onclick="submitEligibility()" class="btn-primary w-full p-4" style="border-radius: 1rem;">Submit Application</button>
+                <div class="mt-auto pt-4">
+                    <button onclick="submitEligibility()" class="btn-primary w-full p-4" style="border-radius: 1rem;">Submit Application</button>
+                </div>
             </div>
 
             <!-- Rejection Screen -->
-            <div id="rejection-screen" class="p-8 text-center hidden flex-col gap-6">
+            <div id="rejection-screen" class="text-center hidden flex-col gap-6">
                 <div class="flex items-center justify-center mx-auto" style="width: 5rem; height: 5rem; background-color: #fee2e2; color: var(--primary-red); border-radius: 9999px;">
                     <i data-lucide="alert-triangle" style="width: 2.5rem; height: 2.5rem;"></i>
                 </div>
@@ -517,7 +519,9 @@
                 <div class="p-4 text-sm text-slate-500" style="background-color: var(--slate-50); border-radius: 1rem; font-style: italic;">
                     "Please borrow some ‘Sharm’ from your neighbors first or try waking up at 5 AM."
                 </div>
-                <button onclick="closeModal()" class="btn-primary w-full p-4" style="border-radius: 1rem; background-color: var(--slate-900);">I'll try harder (to have shame)</button>
+                <div class="mt-auto pt-4">
+                    <button onclick="closeModal()" class="btn-primary w-full p-4" style="border-radius: 1rem; background-color: var(--slate-900);">I'll try harder (to have shame)</button>
+                </div>
             </div>
         </div>
     </div>
