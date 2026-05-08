@@ -93,13 +93,38 @@
     border-radius: 2.5rem;
     box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
 }
 
 .modal-header {
     background-color: var(--primary-red);
-    padding: 2.5rem 2rem;
+    padding: 2rem;
     color: white;
     position: relative;
+    flex-shrink: 0;
+}
+
+#eligibility-form, #rejection-screen {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+@media (max-width: 640px) {
+    .modal-content {
+        border-radius: 2rem;
+    }
+    
+    #eligibility-form, #rejection-screen {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .modal-header {
+        padding: 1.5rem;
+    }
 }
 
 .option-btn {
