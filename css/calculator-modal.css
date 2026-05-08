@@ -1,0 +1,128 @@
+/* Calculator & Modal Styles */
+.calculator-card {
+    max-width: 60rem;
+    margin: 5rem auto;
+    background-color: white;
+    border-radius: 3.5rem;
+    padding: 3rem;
+    box-shadow: 0 40px 100px -20px rgba(217, 30, 39, 0.1);
+    border: 1px solid var(--slate-100);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .calculator-card { padding: 4rem; }
+}
+
+.checkbox-label:has(input:checked) {
+    border-color: var(--primary-red);
+    background-color: rgba(217, 30, 39, 0.05);
+}
+
+.sin-checkbox-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .sin-checkbox-group { grid-template-columns: 1fr 1fr; }
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 2px solid var(--slate-100);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.checkbox-label:hover { background-color: rgba(217, 30, 39, 0.02); }
+
+.checkbox-label input:checked + div > div {
+    border-color: var(--primary-red) !important;
+    background-color: var(--primary-red) !important;
+}
+
+.checkbox-label input:checked + div > div i {
+    opacity: 1 !important;
+}
+
+.checkbox-label input:checked + div {
+    /* The outer container of the checkbox UI */
+}
+
+.meter-container {
+    height: 1rem;
+    background-color: var(--slate-100);
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-red), var(--accent-yellow));
+    width: 0;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.modal-overlay.flex { display: flex; }
+
+.modal-content {
+    background-color: white;
+    width: 100%;
+    max-width: 32rem;
+    border-radius: 2.5rem;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: var(--primary-red);
+    padding: 2.5rem 2rem;
+    color: white;
+    position: relative;
+}
+
+.option-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 2px solid var(--slate-100);
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-align: left;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-main);
+}
+
+.option-btn:hover { 
+    border-color: var(--primary-red); 
+    background-color: var(--bg-soft);
+}
+
+.option-btn.selected {
+    border-color: var(--primary-red);
+    background-color: rgba(217, 30, 39, 0.05);
+    color: var(--primary-red);
+}
