@@ -5,7 +5,9 @@ function toggleMobileMenu() {
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
     
-    const isHidden = mobileMenu.classList.toggle('hidden');
-    menuIcon.classList.toggle('hidden', !isHidden);
-    closeIcon.classList.toggle('hidden', isHidden);
+    mobileMenu.classList.toggle('active');
+    const isActive = mobileMenu.classList.contains('active');
+    
+    menuIcon.classList.toggle('hidden', isActive);
+    closeIcon.classList.toggle('hidden', !isActive);
 }
