@@ -46,6 +46,10 @@ body.loaded {
     padding-right: 1rem;
 }
 
+.paragraph {
+    color: var(--slate-50);
+}
+
 @media (min-width: 640px) {
     .max-container {
         padding-left: 1.5rem;
@@ -148,6 +152,7 @@ body.loaded {
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-16 { margin-bottom: 4rem; }
+.ml-8 { margin-left: 2rem; }
 
 .mt-4 { margin-top: 1rem; }
 .mr-auto { margin-right: auto; }
@@ -181,6 +186,6 @@ body.loaded {
 .text-white { color: white; }
 .text-slate-400 { color: var(--slate-400); }
 .text-slate-500 { color: var(--slate-500); }
-.text-slate-600 { color: var(--slate-100); }
+.text-slate-600 { color: var(--slate-600); }
 .text-slate-700 { color: var(--slate-700); }
 .text-slate-900 { color: var(--slate-900); }
