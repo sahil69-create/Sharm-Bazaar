@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(css|js|buyers)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).(jpg|jpeg|png|gif|webp|avif|jfif|svg)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/delhi",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/mumbai",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bangalore",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/hyderabad",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/chennai",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kolkata",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/pune",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ahmedabad",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/lucknow",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jaipur",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/chandigarh",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/surat",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/noida",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/gurgaon",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/bengaluru",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/chillar-sharm",
+      "destination": "/index.html#pricing"
+    },
+    {
+      "source": "/pro-max-sharm",
+      "destination": "/index.html#pricing"
+    },
+    {
+      "source": "/ultra-premium-sharm",
+      "destination": "/index.html#pricing"
+    }
+  ]
+}
