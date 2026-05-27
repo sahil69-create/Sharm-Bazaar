@@ -72,6 +72,54 @@
       "destination": "/index.html"
     },
     {
+      "source": "/patna",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/kanpur",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nagpur",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/indore",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ludhiana",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/amritsar",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/agra",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/nashik",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/faridabad",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/meerut",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/rajkot",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/varanasi",
+      "destination": "/index.html"
+    },
+    {
       "source": "/noida",
       "destination": "/index.html"
     },
