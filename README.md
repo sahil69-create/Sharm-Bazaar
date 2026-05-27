@@ -11,30 +11,27 @@ SharmBazaar.in is a humorous marketplace where users can "buy" back their lost d
 ## ✨ Features
 
 - **🛍️ Premium Sharm Packages**: Choose from *Chillar Sharm*, *Pro Max*, or *Ultra Premium* (God-level humility).
+- **🌍 Pan-India Coverage**: Delivery services expanded to over 50+ major cities across Haryana, UP, Rajasthan, Punjab, Gujarat, Maharashtra, and Bihar.
 - **🧮 Sharm Calculator**: An interactive widget to calculate your "Shamelessness Level" based on your daily "sins."
 - **📋 Eligibility Flow**: A funny "Buy Now" process that analyzes your habits and eventually denies you for being too shameless.
-- **📱 Fully Responsive**: A seamless experience across mobile, tablet, and desktop.
-- **🎭 Testimonials**: Relatable reviews from " Rahul from Delhi" and other fake satisfied customers.
+- **📱 Fully Responsive**: Optimized for all devices with seamless mobile-first design.
+- **🎭 Testimonials**: Relatable reviews from satisfied customers across India.
 - **☕ Support the Creator**: Integrated UPI and PayPal donation sections for fans of the joke.
-
-## 🛠️ Tech Stack
-
-- **Frontend**: HTML5, Tailwind CSS
-- **Icons**: Lucide Icons
-- **Logic**: Vanilla JavaScript
-- **Fonts**: Plus Jakarta Sans
 
 ## 📂 Project Structure
 
-- `index.html`: The main landing page with all components and Meta tags.
-- `script.js`: Handles interactions, calculator logic, and modal flows.
+- `index.html`: The main landing page with SEO-optimized Meta tags and Service Area sections.
+- `buyers.html`: Dedicated page for top buyers and city-wise success stories.
+- `js/`: Modular JavaScript files for interactions, calculator logic, and UI handling.
+- `css/`: Structured CSS files for better maintenance and responsiveness.
 - `og-image.jpg`: Open Graph image for social media previews.
+- `vercel.json`: Vercel configuration for clean URLs, caching, and city-based rewrites.
 
 ## 🎨 Theme & Style
 
-- **Primary Colors**: Teal/Mint Green (#14b8a6)
-- **Accent Colors**: Coral/Red (#ff6f61)
-- **Style**: Clean SaaS aesthetic with glassmorphism, smooth animations, and premium gradients.
+- **Primary Colors**: Professional Red (#d91e27)
+- **Accent Colors**: Amber/Yellow (#fbbf24)
+- **Style**: Bold marketplace aesthetic with clean layouts, premium cards, and professional dark-mode accents.
 
 ## 📝 Disclaimer
 
