@@ -55,11 +55,13 @@
     background-color: white;
 }
 
-.checkbox-box i {
+.checkbox-box i, 
+.checkbox-box svg {
     width: 1rem;
     height: 1rem;
     color: white;
     opacity: 0 !important;
+    visibility: hidden !important;
     transform: scale(0.5);
     transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -69,8 +71,10 @@
     background-color: var(--primary-red) !important;
 }
 
-.checkbox-label input:checked + div .checkbox-box i {
+.checkbox-label input:checked + div .checkbox-box i,
+.checkbox-label input:checked + div .checkbox-box svg {
     opacity: 1 !important;
+    visibility: visible !important;
     transform: scale(1) !important;
 }
 
