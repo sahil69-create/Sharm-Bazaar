@@ -37,7 +37,7 @@ const buyers = [
         age: 57,
         location: "GLodhi Estate, New Delhi",
         avatar: "https://files.catbox.moe/4flpgi.jpg",
-        purchases: 1.7K,
+        purchases: "1.7K",
         level: "Pro Max",
         levelClass: "pro-max"
     },
