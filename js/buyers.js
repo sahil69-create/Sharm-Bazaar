@@ -3,11 +3,11 @@
 const buyers = [
     {
         id: 1,
-        name: "Bakchodi",
+        name: "Narendra Modi",
         age: 24,
-        location: "Delhi NCR",
+        location: "Gujarat, India",
         avatar: "buyers/narendramodi.avif",
-        purchases: 12,
+        purchases: "132K",
         level: "Legendary",
         levelClass: "legendary"
     },
@@ -23,21 +23,21 @@ const buyers = [
     },
     {
         id: 3,
-        name: "Arjun Singh",
-        age: 22,
-        location: "Bangalore, Karnataka",
-        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Arjun&backgroundColor=1f2937",
-        purchases: 8,
+        name: "Raghav Chadha",
+        age: 37,
+        location: "Delhi NCR",
+        avatar: "https://files.catbox.moe/6k1c4d.jpg",
+        purchases: "2.6K",
         level: "Ultra Premium",
         levelClass: "ultra-premium"
     },
     {
         id: 4,
         name: "Ananya Gupta",
-        age: 26,
-        location: "Gurgaon, Haryana",
-        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Ananya&backgroundColor=d91e27",
-        purchases: 7,
+        age: 57,
+        location: "GLodhi Estate, New Delhi",
+        avatar: "https://files.catbox.moe/4flpgi.jpg",
+        purchases: 1.7K,
         level: "Pro Max",
         levelClass: "pro-max"
     },
@@ -64,18 +64,18 @@ const buyers = [
 ];
 
 // Render Top Buyers Section
-function renderTopBuyers() {
+window.renderTopBuyers = function() {
     const container = document.getElementById('top-buyers-container');
     if (!container) return;
 
     // Check if we're on buyers.html or index.html
-    const isBuyersPage = window.location.pathname.includes('buyers.html');
+    const isBuyersPage = window.location.pathname.includes('buyers.html') || document.title.toLowerCase().includes('top buyers');
     const buyersToShow = isBuyersPage ? buyers : buyers.slice(0, 3);
 
     container.innerHTML = buyersToShow.map(buyer => `
         <div class="buyer-card">
             <div class="flex items-center gap-4">
-                <img src="${buyer.avatar}" alt="${buyer.name}" class="buyer-avatar" loading="lazy" decoding="async">
+                <img src="${buyer.avatar}" alt="${buyer.name}" class="buyer-avatar" loading="lazy" decoding="async" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=${buyer.name}&backgroundColor=d91e27'">
                 <div class="flex-1">
                     <div class="flex flex-col gap-1">
                         <h4 class="buyer-name">${buyer.name}</h4>
@@ -98,7 +98,11 @@ function renderTopBuyers() {
     if (window.lucide) {
         window.lucide.createIcons();
     }
-}
+};
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', renderTopBuyers);
+// Initialize when DOM is loaded or if already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', window.renderTopBuyers);
+} else {
+    window.renderTopBuyers();
+}
