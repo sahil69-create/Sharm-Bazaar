@@ -65,17 +65,25 @@ const buyers = [
 
 // Render Top Buyers Section
 window.renderTopBuyers = function() {
+    console.log("Rendering buyers...");
     const container = document.getElementById('top-buyers-container');
-    if (!container) return;
+    if (!container) {
+        console.log("Container not found");
+        return;
+    }
 
     // Check if we're on buyers.html or index.html
-    const isBuyersPage = window.location.pathname.includes('buyers.html') || document.title.toLowerCase().includes('top buyers');
+    const isBuyersPage = window.location.pathname.includes('buyers') || 
+                         document.title.toLowerCase().includes('top buyers') ||
+                         container.classList.contains('buyers-grid-full');
+    
     const buyersToShow = isBuyersPage ? buyers : buyers.slice(0, 3);
+    console.log("Showing " + buyersToShow.length + " buyers");
 
     container.innerHTML = buyersToShow.map(buyer => `
         <div class="buyer-card">
             <div class="flex items-center gap-4">
-                <img src="${buyer.avatar}" alt="${buyer.name}" class="buyer-avatar" loading="lazy" decoding="async" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=${buyer.name}&backgroundColor=d91e27'">
+                <img src="${buyer.avatar}" alt="${buyer.name}" class="buyer-avatar" loading="lazy" decoding="async" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=${buyer.name.split(' ')[0]}&backgroundColor=d91e27'">
                 <div class="flex-1">
                     <div class="flex flex-col gap-1">
                         <h4 class="buyer-name">${buyer.name}</h4>
@@ -100,9 +108,12 @@ window.renderTopBuyers = function() {
     }
 };
 
-// Initialize when DOM is loaded or if already loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', window.renderTopBuyers);
-} else {
+// Initialize
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
     window.renderTopBuyers();
+} else {
+    document.addEventListener('DOMContentLoaded', window.renderTopBuyers);
 }
+
+// Extra backup for slow loading assets
+window.addEventListener('load', window.renderTopBuyers);
