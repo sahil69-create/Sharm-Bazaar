@@ -16,8 +16,8 @@
 }
 
 .checkbox-label:has(input:checked) {
-    border-color: #10b981;
-    background-color: rgba(16, 185, 129, 0.05);
+    border-color: var(--primary-red);
+    background-color: rgba(217, 30, 39, 0.05);
 }
 
 .sin-checkbox-group {
@@ -41,7 +41,7 @@
     transition: all 0.2s;
 }
 
-.checkbox-label:hover { background-color: rgba(16, 185, 129, 0.02); }
+.checkbox-label:hover { background-color: rgba(217, 30, 39, 0.02); }
 
 .checkbox-box {
     width: 1.5rem;
@@ -59,14 +59,14 @@
     width: 1rem;
     height: 1rem;
     color: white;
-    opacity: 0;
+    opacity: 0 !important;
     transform: scale(0.5);
     transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .checkbox-label input:checked + div .checkbox-box {
-    border-color: #10b981 !important;
-    background-color: #10b981 !important;
+    border-color: var(--primary-red) !important;
+    background-color: var(--primary-red) !important;
 }
 
 .checkbox-label input:checked + div .checkbox-box i {
