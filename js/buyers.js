@@ -64,6 +64,7 @@ window.buyersData = [
 
 // Render Top Buyers Section
 window.renderTopBuyers = function() {
+    console.log("SharmBazaar: Rendering buyers list...");
     const container = document.getElementById('top-buyers-container');
     if (!container) return;
 
