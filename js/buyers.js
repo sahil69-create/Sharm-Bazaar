@@ -1,6 +1,5 @@
 // --- Top Buyers Data ---
-
-const buyers = [
+window.buyersData = [
     {
         id: 1,
         name: "Narendra Modi",
@@ -65,20 +64,17 @@ const buyers = [
 
 // Render Top Buyers Section
 window.renderTopBuyers = function() {
-    console.log("Rendering buyers...");
     const container = document.getElementById('top-buyers-container');
-    if (!container) {
-        console.log("Container not found");
-        return;
-    }
+    if (!container) return;
 
+    const buyers = window.buyersData || [];
+    
     // Check if we're on buyers.html or index.html
     const isBuyersPage = window.location.pathname.includes('buyers') || 
                          document.title.toLowerCase().includes('top buyers') ||
                          container.classList.contains('buyers-grid-full');
     
     const buyersToShow = isBuyersPage ? buyers : buyers.slice(0, 3);
-    console.log("Showing " + buyersToShow.length + " buyers");
 
     container.innerHTML = buyersToShow.map(buyer => `
         <div class="buyer-card">
@@ -102,18 +98,16 @@ window.renderTopBuyers = function() {
         </div>
     `).join('');
 
-    // Reinitialize lucide icons for new content
     if (window.lucide) {
         window.lucide.createIcons();
     }
 };
 
-// Initialize
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
+// Auto-run with multiple triggers
+if (document.readyState !== 'loading') {
     window.renderTopBuyers();
-} else {
-    document.addEventListener('DOMContentLoaded', window.renderTopBuyers);
 }
-
-// Extra backup for slow loading assets
+document.addEventListener('DOMContentLoaded', window.renderTopBuyers);
 window.addEventListener('load', window.renderTopBuyers);
+// Extra insurance for dynamic loading
+setTimeout(window.renderTopBuyers, 500);
