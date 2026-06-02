@@ -1,13 +1,18 @@
 // --- Sharm Calculator Functions ---
 
-function updateCalculator() {
+window.updateCalculator = function() {
     const checkboxes = document.querySelectorAll('#calculator input[type="checkbox"]');
     const totalShamelessness = Array.from(checkboxes).reduce((acc, cb) => acc + (cb.checked ? parseInt(cb.value) : 0), 0);
 
-    document.getElementById('sharm-meter').style.width = `${totalShamelessness}%`;
-    document.getElementById('calculator-result-text').innerText = `${totalShamelessness}%`;
+    const meter = document.getElementById('sharm-meter');
+    const resultText = document.getElementById('calculator-result-text');
+    
+    if (meter) meter.style.width = `${totalShamelessness}%`;
+    if (resultText) resultText.innerText = `${totalShamelessness}%`;
     
     const rec = document.getElementById('calculator-recommendation');
+    if (!rec) return;
+
     if (totalShamelessness === 0) {
         rec.innerText = "Select your sins to begin";
         rec.className = "text-right text-sm font-semibold text-slate-500";
@@ -23,4 +28,4 @@ function updateCalculator() {
         rec.className = "text-right text-sm font-semibold animate-pulse";
         rec.style.color = "var(--primary-red)";
     }
-}
+};
