@@ -32,7 +32,7 @@ window.buyersData = [
     },
     {
         id: 4,
-        name: "Ananya Gupta",
+        name: "Arvind Kejriwal",
         age: 57,
         location: "GLodhi Estate, New Delhi",
         avatar: "https://files.catbox.moe/4flpgi.jpg",
