@@ -3,7 +3,7 @@ window.buyersData = [
     {
         id: 1,
         name: "Narendra Modi",
-        age: 24,
+        age: 75,
         location: "Gujarat, India",
         avatar: "buyers/narendramodi.avif",
         purchases: "132K",
@@ -12,8 +12,8 @@ window.buyersData = [
     },
     {
         id: 2,
-        name: "DUCK",
-        age: 28,
+        name: "Donald Trump",
+        age: 79,
         location: "Mumbai, Maharashtra",
         avatar: "buyers/pig.jfif",
         purchases: 10,
@@ -42,13 +42,13 @@ window.buyersData = [
     },
     {
         id: 5,
-        name: "Vikram Joshi",
-        age: 30,
-        location: "Andheri, Mumbai",
-        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Vikram&backgroundColor=fbbf24",
-        purchases: 6,
-        level: "Chillar",
-        levelClass: "chillar"
+        name: "Dharmendra Pradhan",
+        age: 56,
+        location: "New Delhi",
+        avatar: "https://files.catbox.moe/ej0cc4.jpg",
+        purchases: 78K,
+        level: "Legend",
+        levelClass: "legend"
     },
     {
         id: 6,
