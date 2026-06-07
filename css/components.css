@@ -1,0 +1,12 @@
+/* Specialized components like Glassmorphism and Gradients */
+.glass { 
+    background: rgba(255, 255, 255, 0.75); 
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
+}
+
+.gradient-text { 
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--accent-yellow) 100%); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
