@@ -12,13 +12,13 @@ window.buyersData = [
     },
     {
         id: 2,
-        name: "Donald Trump",
-        age: 79,
-        location: "Mumbai, Maharashtra",
-        avatar: "buyers/pig.jfif",
-        purchases: 10,
-        level: "Pro Max",
-        levelClass: "pro-max"
+        name: "Dharmendra Pradhan",
+        age: 56,
+        location: "New Delhi",
+        avatar: "https://files.catbox.moe/ej0cc4.jpg",
+        purchases: 78K,
+        level: "Legend",
+        levelClass: "legend"
     },
     {
         id: 3,
@@ -42,13 +42,13 @@ window.buyersData = [
     },
     {
         id: 5,
-        name: "Dharmendra Pradhan",
-        age: 56,
-        location: "New Delhi",
-        avatar: "https://files.catbox.moe/ej0cc4.jpg",
-        purchases: 78K,
-        level: "Legend",
-        levelClass: "legend"
+        name: "Donald Trump",
+        age: 79,
+        location: "Mumbai, Maharashtra",
+        avatar: "buyers/pig.jfif",
+        purchases: 10,
+        level: "Pro Max",
+        levelClass: "pro-max"
     },
     {
         id: 6,
