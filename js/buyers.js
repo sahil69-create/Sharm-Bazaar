@@ -52,11 +52,11 @@ window.buyersData = [
     },
     {
         id: 6,
-        name: "Neha Kapoor",
-        age: 25,
-        location: "Koramangala, Bangalore",
-        avatar: "https://api.dicebear.com/7.x/bottts/svg?seed=Neha&backgroundColor=1f2937",
-        purchases: 5,
+        name: "Dilip Ghosh",
+        age: 61,
+        location: "Sector-5 Metro Station, Kolkata, West Bengal",
+        avatar: "https://files.catbox.moe/y4uucf.jpg",
+        purchases: 15k,
         level: "Chillar",
         levelClass: "chillar"
     }
