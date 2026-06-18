@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire UID Info - SharmBazaar</title>
+    
+    <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    
+    <title>Free Fire UID Info - Check Player Details | SharmBazaar</title>
+    
+    <!-- Google Index Verification Tag -->
+    <meta name="google-site-verification" content="LjnjgRUOUfIkpFvpWJrSbp6xKdUaJYVtU-ca_KhGGtM" />
+
+    <!-- Website Preview Meta Tags --> 
+    <link rel="canonical" href="https://www.sharmbazaar.in/api/FF-Info/" />
+    <meta name="title" content="Free Fire UID Info - Check Player Details | SharmBazaar" /> 
+    <meta name="description" content="Check Free Fire player details using UID. Get player stats, clan info, rank, level, and more for Indian region Free Fire players." /> 
+    <meta name="keywords" content="Free Fire UID info, Free Fire player check, Free Fire stats, Free Fire clan info, Free Fire rank checker, Garena Free Fire, FF UID details, Free Fire India, check Free Fire player, Free Fire account info, Free Fire player ID, FF UID checker, Free Fire player search" />
+    <meta name="author" content="Kryzome" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="theme-color" content="#d91e27" /> 
+    <meta name="googlebot" content="index, follow" /> 
+  
+    <!-- Open Graph / Facebook --> 
+    <meta property="og:type" content="website" /> 
+    <meta property="og:url" content="https://www.sharmbazaar.in/api/FF-Info/" /> 
+    <meta property="og:title" content="Free Fire UID Info - Check Player Details | SharmBazaar" /> 
+    <meta property="og:description" content="Check Free Fire player details using UID. Get player stats, clan info, rank, level, and more for Indian region Free Fire players." /> 
+    <meta property="og:image" content="https://www.sharmbazaar.in/og-image.jpg" /> 
+  
+    <!-- Twitter --> 
+    <meta property="twitter:card" content="summary_large_image" /> 
+    <meta property="twitter:url" content="https://www.sharmbazaar.in/api/FF-Info/" /> 
+    <meta property="twitter:title" content="Free Fire UID Info - Check Player Details | SharmBazaar" /> 
+    <meta property="twitter:description" content="Check Free Fire player details using UID. Get player stats, clan info, rank, level, and more for Indian region Free Fire players." /> 
+    <meta property="twitter:image" content="https://www.sharmbazaar.in/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://files.catbox.moe/tzwha7.png">
+    <link rel="apple-touch-icon" href="https://files.catbox.moe/tzwha7.png">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../../css/ui-common.css">
@@ -270,7 +311,7 @@
     <nav class="navbar glass" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100;">
         <div class="max-container nav-wrapper">
             <a href="../../index.html" class="logo-group" style="text-decoration: none;">
-                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=FF&backgroundColor=d91e27" alt="SharmBazaar Logo" width="40" height="40" loading="lazy" decoding="async" class="logo-img">
+                <img src="https://files.catbox.moe/tzwha7.png" alt="SharmBazaar Logo" width="40" height="40" loading="lazy" decoding="async" class="logo-img">
                 <span class="logo-text">Sharm<span style="color: white;">Bazaar</span></span>
             </a>
             <div class="nav-links">
@@ -455,19 +496,26 @@
             fields.forEach(field => {
                 const key = field.key || field;
                 const label = field.label || key.replace(/_/g, ' ');
-                let value = data[key];
-                if (value !== undefined && value !== null && value !== '') {
-                    const isCopyable = field.copyable;
-                    rows += `
-                        <div class="info-row">
-                            <span class="info-label">${label}</span>
-                            <div style="display:flex;align-items:center;">
-                                <span class="info-value ${field.highlight ? 'highlight-value' : ''}">${value}</span>
-                                ${isCopyable ? `<button class="copy-btn" onclick="copyToClipboard('${value}')">📋 Copy</button>` : ''}
-                            </div>
-                        </div>
-                    `;
+                let value = field.customValue !== undefined ? field.customValue : data[key];
+                
+                // Skip if value is undefined, null, empty, or an object/array
+                if (value === undefined || value === null || value === '') {
+                    return;
                 }
+                if (typeof value === 'object') {
+                    return; // Skip objects/arrays to avoid raw JSON
+                }
+                
+                const isCopyable = field.copyable;
+                rows += `
+                    <div class="info-row">
+                        <span class="info-label">${label}</span>
+                        <div style="display:flex;align-items:center;">
+                            <span class="info-value ${field.highlight ? 'highlight-value' : ''}">${value}</span>
+                            ${isCopyable ? `<button class="copy-btn" onclick="copyToClipboard('${value}')">📋 Copy</button>` : ''}
+                        </div>
+                    </div>
+                `;
             });
             
             if (!rows) return '';
@@ -484,10 +532,17 @@
             console.log('API Response:', data);
             addToHistory(uid);
             
-            // Extract all possible data from the response
-            const playerData = data.data || data;
-            const avatar = playerData.avatar || playerData.headPic || playerData.profilePic || 'https://api.dicebear.com/7.x/bottts/svg?seed=FF&backgroundColor=d91e27';
-            const nickname = playerData.nickname || playerData.name || playerData.playerName || 'N/A';
+            // Extract data from the correct structure
+            const basicInfo = data.basicInfo || {};
+            const clanBasicInfo = data.clanBasicInfo || {};
+            const petInfo = data.petInfo || {};
+            const socialInfo = data.socialInfo || {};
+            const creditScoreInfo = data.creditScoreInfo || {};
+            const diamondCostRes = data.diamondCostRes || {};
+            
+            // Get avatar (headPic is an ID, we'll use a placeholder or dicebear)
+            const avatar = `https://api.dicebear.com/7.x/bottts/svg?seed=${basicInfo.accountId || uid}&backgroundColor=d91e27`;
+            const nickname = basicInfo.nickname || 'N/A';
             
             let html = '';
             
@@ -495,100 +550,84 @@
             html += `
                 <div class="ff-card">
                     <div class="avatar-wrapper">
-                        <img src="${avatar}" alt="Avatar" class="avatar-img" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=FF&backgroundColor=d91e27'">
+                        <img src="${avatar}" alt="Avatar" class="avatar-img">
                     </div>
                     <h2 class="ff-username">${nickname}</h2>
                     <div class="text-center mb-4">
-                        <span class="region-badge">${playerData.region || 'INDIA REGION'}</span>
+                        <span class="region-badge">${basicInfo.region || 'INDIA REGION'}</span>
                     </div>
                 </div>
             `;
             
+            // Helper function to format timestamp
+            function formatTimestamp(timestamp) {
+                if (!timestamp) return 'N/A';
+                const date = new Date(timestamp * 1000);
+                return date.toLocaleString('en-IN', { 
+                    day: '2-digit', 
+                    month: '2-digit', 
+                    year: 'numeric', 
+                    hour: '2-digit', 
+                    minute: '2-digit' 
+                });
+            }
+            
             // Player Profile Section
-            html += renderSection('PLAYER PROFILE', '👤', playerData, [
+            html += renderSection('PLAYER PROFILE', '👤', basicInfo, [
                 { key: 'nickname', label: 'Nickname' },
-                { key: 'uid', label: 'UID', copyable: true, highlight: true },
+                { key: 'accountId', label: 'UID', copyable: true, highlight: true },
                 { key: 'region', label: 'Region' },
                 { key: 'level', label: 'Level' },
-                { key: 'likes', label: 'Likes' },
-                { key: 'release_version', label: 'Release Version' },
-                { key: 'account_created', label: 'Account Created' },
-                { key: 'last_login', label: 'Last Login' }
+                { key: 'liked', label: 'Likes' },
+                { key: 'releaseVersion', label: 'Release Version' },
+                { 
+                    key: 'createAt', 
+                    label: 'Account Created',
+                    customValue: formatTimestamp(basicInfo.createAt)
+                },
+                { 
+                    key: 'lastLoginAt', 
+                    label: 'Last Login',
+                    customValue: formatTimestamp(basicInfo.lastLoginAt)
+                }
             ]);
             
             // Rank Info Section
-            html += renderSection('RANK INFO', '🏆', playerData, [
-                { key: 'br_rank', label: 'BR Rank' },
-                { key: 'br_points', label: 'BR Points' },
-                { key: 'cs_rank', label: 'CS Rank' },
-                { key: 'cs_points', label: 'CS Points' }
+            html += renderSection('RANK INFO', '🏆', basicInfo, [
+                { key: 'rank', label: 'BR Rank' },
+                { key: 'rankingPoints', label: 'BR Points' },
+                { key: 'csRank', label: 'CS Rank' },
+                { key: 'csRankingPoints', label: 'CS Points' }
             ]);
             
             // Clan Details Section
-            html += renderSection('CLAN DETAILS', '🛡️', playerData, [
-                { key: 'clan_name', label: 'Clan Name' },
-                { key: 'clan_id', label: 'Clan ID', copyable: true },
-                { key: 'clan_level', label: 'Clan Level' },
-                { key: 'members', label: 'Members' }
+            html += renderSection('CLAN DETAILS', '🛡️', clanBasicInfo, [
+                { key: 'clanName', label: 'Clan Name' },
+                { key: 'clanId', label: 'Clan ID', copyable: true },
+                { key: 'clanLevel', label: 'Clan Level' },
+                { key: 'memberNum', label: 'Members' },
+                { key: 'capacity', label: 'Capacity' }
             ]);
             
             // Pet Info Section
-            html += renderSection('PET INFO', '🐾', playerData, [
-                { key: 'pet_name', label: 'Pet Name' },
-                { key: 'pet_level', label: 'Pet Level' }
+            html += renderSection('PET INFO', '🐾', petInfo, [
+                { key: 'id', label: 'Pet ID' },
+                { key: 'level', label: 'Pet Level' },
+                { key: 'exp', label: 'Pet EXP' }
             ]);
             
             // Social Section
-            html += renderSection('SOCIAL', '💬', playerData, [
+            html += renderSection('SOCIAL', '💬', socialInfo, [
                 { key: 'gender', label: 'Gender' },
                 { key: 'language', label: 'Language' },
                 { key: 'signature', label: 'Signature' }
             ]);
             
             // Account Section
-            html += renderSection('ACCOUNT', '💳', playerData, [
-                { key: 'credit_score', label: 'Credit Score' },
-                { key: 'diamond_cost', label: 'Diamond Cost' }
+            html += renderSection('ACCOUNT', '💳', { ...creditScoreInfo, ...diamondCostRes }, [
+                { key: 'creditScore', label: 'Credit Score' },
+                { key: 'diamondCost', label: 'Diamond Cost' }
             ]);
-            
-            // Show ALL other fields we found in the API response
-            const shownKeys = new Set([
-                'nickname', 'name', 'playerName', 'uid', 'region', 'level', 'likes', 
-                'release_version', 'account_created', 'last_login',
-                'br_rank', 'br_points', 'cs_rank', 'cs_points',
-                'clan_name', 'clan_id', 'clan_level', 'members',
-                'pet_name', 'pet_level',
-                'gender', 'language', 'signature',
-                'credit_score', 'diamond_cost',
-                'avatar', 'headPic', 'profilePic'
-            ]);
-            
-            let extraRows = '';
-            for (const key in playerData) {
-                if (!shownKeys.has(key)) {
-                    let value = playerData[key];
-                    if (typeof value === 'object') {
-                        value = JSON.stringify(value);
-                    }
-                    if (value !== undefined && value !== null && value !== '') {
-                        extraRows += `
-                            <div class="info-row">
-                                <span class="info-label">${key.replace(/_/g, ' ')}</span>
-                                <span class="info-value">${value}</span>
-                            </div>
-                        `;
-                    }
-                }
-            }
-            
-            if (extraRows) {
-                html += `
-                    <div class="ff-card">
-                        <div class="section-title">📊 OTHER INFO</div>
-                        ${extraRows}
-                    </div>
-                `;
-            }
             
             resultsContainer.innerHTML = html;
         }
