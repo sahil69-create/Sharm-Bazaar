@@ -1,1 +1,645 @@
-sdfs
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire UID Info - SharmBazaar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../../css/ui-common.css">
+    <link rel="stylesheet" href="../../css/navigation.css">
+    
+    <style>
+        :root {
+            --primary-red: #d91e27;
+            --primary-hover: #b91c1c;
+            --accent-yellow: #fbbf24;
+            --bg-light: #ffffff;
+            --bg-soft: #f9fafb;
+            --bg-dark: #111827;
+            --text-white: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, var(--slate-50) 0%, var(--bg-light) 100%);
+            margin: 0;
+            min-height: 100vh;
+        }
+        
+        .ff-hero {
+            padding: 8rem 1rem 3rem;
+            background: radial-gradient(circle at top, rgba(217, 30, 39, 0.08) 0%, transparent 70%);
+        }
+        
+        .ff-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 20px 60px -20px rgba(217, 30, 39, 0.15);
+            border: 1px solid var(--slate-100);
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--slate-100);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .ff-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--slate-200);
+            border-radius: 0.875rem;
+            font-size: 1.125rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: all 0.3s;
+            outline: none;
+        }
+        
+        .ff-input:focus {
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 4px rgba(217, 30, 39, 0.1);
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--slate-100);
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .info-row:last-child { border-bottom: none; }
+        
+        .info-label {
+            color: var(--slate-600);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-value {
+            font-weight: 700;
+            color: var(--text-main);
+            text-align: right;
+            word-break: break-all;
+        }
+        
+        .highlight-value {
+            color: var(--primary-red);
+            font-weight: 800;
+        }
+        
+        .copy-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-left: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--primary-hover);
+            transform: scale(1.05);
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--slate-200);
+            border-top: 3px solid var(--primary-red);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .recent-chip {
+            background: var(--slate-50);
+            color: var(--slate-700);
+            padding: 0.4rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid var(--slate-200);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .recent-chip:hover {
+            background: var(--primary-red);
+            color: white;
+            border-color: var(--primary-red);
+            transform: translateY(-2px);
+        }
+        
+        .ff-btn {
+            background: linear-gradient(135deg, var(--primary-red), #e11d48);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 9999px;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px -5px rgba(217, 30, 39, 0.3);
+        }
+        
+        .ff-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 30px -10px rgba(217, 30, 39, 0.4);
+        }
+        
+        .ff-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .avatar-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .avatar-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 9999px;
+            border: 4px solid var(--primary-red);
+            object-fit: cover;
+            box-shadow: 0 10px 30px -10px rgba(217, 30, 39, 0.4);
+        }
+        
+        .ff-username {
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--text-main);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .region-badge {
+            background: var(--accent-yellow);
+            color: var(--slate-900);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            text-align: center;
+            color: var(--slate-600);
+            font-size: 1.125rem;
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background: text;
+        }
+        
+        @media (max-width: 768px) {
+            .ff-hero {
+                padding-top: 7rem;
+            }
+            
+            .hero-title {
+                font-size: 1.75rem;
+            }
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        
+        ::-webkit-scrollbar-track { background: var(--slate-100); }
+        
+        ::-webkit-scrollbar-thumb { background: var(--primary-red); border-radius: 9999px; }
+        
+        .hidden-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar glass" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100;">
+        <div class="max-container nav-wrapper">
+            <a href="../../index.html" class="logo-group" style="text-decoration: none;">
+                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=FF&backgroundColor=d91e27" alt="SharmBazaar Logo" width="40" height="40" loading="lazy" decoding="async" class="logo-img">
+                <span class="logo-text">Sharm<span style="color: white;">Bazaar</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../index.html#pricing" class="nav-link">Products</a>
+            </div>
+            <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="mobile-menu-btn">
+                <i data-lucide="menu" id="menu-icon"></i>
+                <i data-lucide="x" id="close-icon" class="hidden"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="mobile-menu-drawer">
+            <div class="p-4">
+                <a href="../../index.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Home</a>
+                <a href="../../index.html#pricing" onclick="toggleMobileMenu()" class="mobile-nav-link">Products</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="ff-hero">
+        <div class="max-container">
+            <h1 class="hero-title">
+                <span class="gradient-text">Free Fire UID Info</span>
+            </h1>
+            <p class="hero-subtitle">
+                Find Free Fire player information using UID - India Region
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-8">
+        <div class="max-container" style="max-width: 50rem;">
+            <!-- Search Card -->
+            <div class="ff-card">
+                <div class="flex flex-col gap-4">
+                    <div class="relative">
+                        <input type="text" id="uidInput" class="ff-input" placeholder="Enter Free Fire UID" inputmode="numeric" autocomplete="off">
+                    </div>
+                    <div class="flex gap-3 flex-wrap">
+                        <button id="searchBtn" class="ff-btn flex-1">
+                            <span id="searchBtnText">🔍 Search</span>
+                        </button>
+                        <button id="clearBtn" class="btn-primary" style="background: var(--slate-200); color: var(--slate-800); box-shadow: none;">
+                            Clear
+                        </button>
+                    </div>
+                    
+                    <!-- Recent Searches -->
+                    <div id="recentContainer" style="display: none;">
+                        <div class="flex items-center justify-between mb-2">
+                            <span style="color: var(--slate-600); font-size: 0.875rem; font-weight: 600;">📋 Recent Searches</span>
+                            <button id="clearHistoryBtn" style="background: transparent; border: 1px solid var(--slate-300); color: var(--slate-500); padding: 0.3rem 0.8rem; border-radius: 9999px; font-size: 0.75rem; cursor: pointer;">Clear</button>
+                        </div>
+                        <div id="historyList" class="flex flex-wrap gap-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Container -->
+            <div id="resultsContainer"></div>
+
+            <!-- Footer Note -->
+            <div style="text-align: center; margin-top: 2rem; color: var(--slate-500); font-size: 0.875rem;">
+                <p>⚡ Powered by Dark Aura API & SharmBazaar</p>
+                <p style="margin-top: 0.25rem;">This is a free tool for entertainment purposes only</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="margin-top: 4rem;">
+        <div class="max-container">
+            <div class="footer-top">
+                <div class="flex flex-col gap-4 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                        <div class="p-2" style="background-color: var(--slate-800); border-radius: 0.5rem;">
+                            <i data-lucide="shopping-bag" class="text-slate-400" style="width: 1.25rem; height: 1.25rem;"></i>
+                        </div>
+                        <a href="../../index.html" style="text-decoration: none;">
+                            <span class="text-xl font-bold text-white">Sharm<span style="color: var(--primary-red);">Bazaar</span></span>
+                        </a>
+                    </div>
+                    <p class="text-sm" style="max-width: 20rem;">World's first marketplace for dignity, respect, and sanskar.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook" class="social-link"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram" class="social-link"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="YouTube" class="social-link"><i data-lucide="youtube"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="social-link"><i data-lucide="linkedin"></i></a>
+                </div>
+                <div class="text-center flex flex-col gap-2">
+                    <p class="text-sm font-bold text-white">Contact Fake Support</p>
+                    <p class="text-xs">help@sharmbazaar.in (They are too shy to reply)</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SharmBazaar. All rights reserved. Created with 0% shame.</p>
+                <div class="flex gap-4">
+                    <a href="https://kryzome.vercel.app/" target="_blank" class="text-white font-bold" style="text-decoration: none; transition: color 0.2s;">Built by Kryzome</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="../../js/init.js?v=1.1" defer></script>
+    <script src="../../js/navigation.js?v=1.1" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) lucide.createIcons();
+        });
+        
+        const uidInput = document.getElementById('uidInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchBtnText = document.getElementById('searchBtnText');
+        const clearBtn = document.getElementById('clearBtn');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const recentContainer = document.getElementById('recentContainer');
+        const historyList = document.getElementById('historyList');
+        const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+        
+        let history = JSON.parse(localStorage.getItem('ffuidHistory') || '[]');
+        
+        function renderHistory() {
+            if (history.length > 0) {
+                recentContainer.style.display = 'block';
+                historyList.innerHTML = '';
+                history.slice(0, 5).forEach(uid => {
+                    const chip = document.createElement('span');
+                    chip.className = 'recent-chip';
+                    chip.textContent = uid;
+                    chip.onclick = () => { uidInput.value = uid; performSearch(uid); };
+                    historyList.appendChild(chip);
+                });
+            } else {
+                recentContainer.style.display = 'none';
+            }
+        }
+        
+        function addToHistory(uid) {
+            history = history.filter(u => u !== uid);
+            history.unshift(uid);
+            if (history.length > 5) history.length = 5;
+            localStorage.setItem('ffuidHistory', JSON.stringify(history));
+            renderHistory();
+        }
+        
+        function clearAll() {
+            uidInput.value = '';
+            resultsContainer.innerHTML = '';
+        }
+        
+        function clearHistory() {
+            history = [];
+            localStorage.removeItem('ffuidHistory');
+            renderHistory();
+        }
+        
+        function showLoading() {
+            searchBtn.disabled = true;
+            searchBtnText.innerHTML = '<span class="loading-spinner"></span>';
+        }
+        
+        function hideLoading() {
+            searchBtn.disabled = false;
+            searchBtnText.textContent = '🔍 Search';
+        }
+        
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+        
+        function renderSection(title, icon, data, fields) {
+            let rows = '';
+            fields.forEach(field => {
+                const key = field.key || field;
+                const label = field.label || key.replace(/_/g, ' ');
+                let value = data[key];
+                if (value !== undefined && value !== null && value !== '') {
+                    const isCopyable = field.copyable;
+                    rows += `
+                        <div class="info-row">
+                            <span class="info-label">${label}</span>
+                            <div style="display:flex;align-items:center;">
+                                <span class="info-value ${field.highlight ? 'highlight-value' : ''}">${value}</span>
+                                ${isCopyable ? `<button class="copy-btn" onclick="copyToClipboard('${value}')">📋 Copy</button>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            
+            if (!rows) return '';
+            
+            return `
+                <div class="ff-card">
+                    <div class="section-title">${icon} ${title}</div>
+                    ${rows}
+                </div>
+            `;
+        }
+        
+        function showResults(data, uid) {
+            console.log('API Response:', data);
+            addToHistory(uid);
+            
+            // Extract all possible data from the response
+            const playerData = data.data || data;
+            const avatar = playerData.avatar || playerData.headPic || playerData.profilePic || 'https://api.dicebear.com/7.x/bottts/svg?seed=FF&backgroundColor=d91e27';
+            const nickname = playerData.nickname || playerData.name || playerData.playerName || 'N/A';
+            
+            let html = '';
+            
+            // Player Profile Card (Header)
+            html += `
+                <div class="ff-card">
+                    <div class="avatar-wrapper">
+                        <img src="${avatar}" alt="Avatar" class="avatar-img" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=FF&backgroundColor=d91e27'">
+                    </div>
+                    <h2 class="ff-username">${nickname}</h2>
+                    <div class="text-center mb-4">
+                        <span class="region-badge">${playerData.region || 'INDIA REGION'}</span>
+                    </div>
+                </div>
+            `;
+            
+            // Player Profile Section
+            html += renderSection('PLAYER PROFILE', '👤', playerData, [
+                { key: 'nickname', label: 'Nickname' },
+                { key: 'uid', label: 'UID', copyable: true, highlight: true },
+                { key: 'region', label: 'Region' },
+                { key: 'level', label: 'Level' },
+                { key: 'likes', label: 'Likes' },
+                { key: 'release_version', label: 'Release Version' },
+                { key: 'account_created', label: 'Account Created' },
+                { key: 'last_login', label: 'Last Login' }
+            ]);
+            
+            // Rank Info Section
+            html += renderSection('RANK INFO', '🏆', playerData, [
+                { key: 'br_rank', label: 'BR Rank' },
+                { key: 'br_points', label: 'BR Points' },
+                { key: 'cs_rank', label: 'CS Rank' },
+                { key: 'cs_points', label: 'CS Points' }
+            ]);
+            
+            // Clan Details Section
+            html += renderSection('CLAN DETAILS', '🛡️', playerData, [
+                { key: 'clan_name', label: 'Clan Name' },
+                { key: 'clan_id', label: 'Clan ID', copyable: true },
+                { key: 'clan_level', label: 'Clan Level' },
+                { key: 'members', label: 'Members' }
+            ]);
+            
+            // Pet Info Section
+            html += renderSection('PET INFO', '🐾', playerData, [
+                { key: 'pet_name', label: 'Pet Name' },
+                { key: 'pet_level', label: 'Pet Level' }
+            ]);
+            
+            // Social Section
+            html += renderSection('SOCIAL', '💬', playerData, [
+                { key: 'gender', label: 'Gender' },
+                { key: 'language', label: 'Language' },
+                { key: 'signature', label: 'Signature' }
+            ]);
+            
+            // Account Section
+            html += renderSection('ACCOUNT', '💳', playerData, [
+                { key: 'credit_score', label: 'Credit Score' },
+                { key: 'diamond_cost', label: 'Diamond Cost' }
+            ]);
+            
+            // Show ALL other fields we found in the API response
+            const shownKeys = new Set([
+                'nickname', 'name', 'playerName', 'uid', 'region', 'level', 'likes', 
+                'release_version', 'account_created', 'last_login',
+                'br_rank', 'br_points', 'cs_rank', 'cs_points',
+                'clan_name', 'clan_id', 'clan_level', 'members',
+                'pet_name', 'pet_level',
+                'gender', 'language', 'signature',
+                'credit_score', 'diamond_cost',
+                'avatar', 'headPic', 'profilePic'
+            ]);
+            
+            let extraRows = '';
+            for (const key in playerData) {
+                if (!shownKeys.has(key)) {
+                    let value = playerData[key];
+                    if (typeof value === 'object') {
+                        value = JSON.stringify(value);
+                    }
+                    if (value !== undefined && value !== null && value !== '') {
+                        extraRows += `
+                            <div class="info-row">
+                                <span class="info-label">${key.replace(/_/g, ' ')}</span>
+                                <span class="info-value">${value}</span>
+                            </div>
+                        `;
+                    }
+                }
+            }
+            
+            if (extraRows) {
+                html += `
+                    <div class="ff-card">
+                        <div class="section-title">📊 OTHER INFO</div>
+                        ${extraRows}
+                    </div>
+                `;
+            }
+            
+            resultsContainer.innerHTML = html;
+        }
+        
+        function showError(msg) {
+            resultsContainer.innerHTML = `
+                <div class="ff-card">
+                    <div class="text-center">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">❌</div>
+                        <h3 style="color: var(--slate-800); font-weight: 800; font-size: 1.25rem;">Oops!</h3>
+                        <p style="color: var(--slate-600); margin-top: 0.5rem;">${msg}</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        async function performSearch(uidToSearch) {
+            const uid = uidToSearch || uidInput.value.trim();
+            if (!uid) {
+                alert('Please enter a UID');
+                return;
+            }
+            
+            showLoading();
+            
+            try {
+                const res = await fetch(`https://dark-aura-info-api-v2.vercel.app/player-info?uid=${uid}`);
+                if (res.ok) {
+                    const data = await res.json();
+                    showResults(data, uid);
+                } else {
+                    showError('Failed to fetch data. Please try again later.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showError('An error occurred. Please check your internet connection.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        searchBtn.addEventListener('click', () => performSearch());
+        clearBtn.addEventListener('click', clearAll);
+        clearHistoryBtn.addEventListener('click', clearHistory);
+        uidInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        renderHistory();
+    </script>
+</body>
+</html>
