@@ -1,0 +1,13 @@
+{
+  "name": "sharmbazaar",
+  "version": "1.0.0",
+  "description": "SharmBazaar - The World's First Marketplace for Dignity and Sanskar",
+  "main": "index.html",
+  "scripts": {},
+  "keywords": ["sharmbazaar", "humor", "satire", "ecommerce"],
+  "author": "Kryzome",
+  "license": "MIT",
+  "dependencies": {
+    "razorpay": "^2.9.4"
+  }
+}
