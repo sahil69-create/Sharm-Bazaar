@@ -12,10 +12,10 @@ window.sharmlessData = [
     },
     {
         id: 2,
-        name: "Vladimir Putin",
-        age: 72,
-        location: "Moscow, Russia",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
+        name: "Bani",
+        age: 19,
+        location: "Jharkhand",
+        avatar: "https://files.catbox.moe/1rngwd.jpg",
         sharmLessScore: "95%",
         level: "Sharm King",
         levelClass: "legendary"
