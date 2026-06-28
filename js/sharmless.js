@@ -22,9 +22,9 @@ window.sharmlessData = [
     },
     {
         id: 3,
-        name: "Kanye West",
-        age: 47,
-        location: "Los Angeles, USA",
+        name: "Reja Khan",
+        age: 24,
+        location: "Kolkata",
         avatar: "https://files.catbox.moe/ppuzvy.png",
         sharmLessScore: "90%",
         level: "Sharm Destroyer",
