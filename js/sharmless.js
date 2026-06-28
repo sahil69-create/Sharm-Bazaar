@@ -25,7 +25,7 @@ window.sharmlessData = [
         name: "Reja Khan",
         age: 24,
         location: "Kolkata",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
+        avatar: "https://files.catbox.moe/d6pjp0.jpg",
         sharmLessScore: "90%",
         level: "Sharm Destroyer",
         levelClass: "pro-max"
