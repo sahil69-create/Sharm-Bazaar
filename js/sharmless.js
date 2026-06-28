@@ -32,10 +32,10 @@ window.sharmlessData = [
     },
     {
         id: 4,
-        name: "Andrew Tate",
-        age: 38,
-        location: "Bucharest, Romania",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
+        name: "Sahil Jangra",
+        age: 21,
+        location: "Hisar, Haryana",
+        avatar: "https://files.catbox.moe/apylmd.jpg",
         sharmLessScore: "88%",
         level: "Sharm Hunter",
         levelClass: "pro-max"
