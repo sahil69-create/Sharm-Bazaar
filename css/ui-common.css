@@ -197,7 +197,7 @@ body.loaded {
     border: 1px solid rgba(0, 0, 0, 0.05);
     font-weight: 600;
     font-size: 0.875rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.2, 0, 0.2, 1);
     cursor: pointer;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
     display: flex;
@@ -212,19 +212,6 @@ body.loaded {
     background-color: var(--slate-300);
     border-radius: 50%;
     transition: all 0.3s ease;
-}
-
-.city-tag:hover {
-    background-color: var(--primary-red);
-    color: white;
-    border-color: var(--primary-red);
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 20px 25px -5px rgba(217, 30, 39, 0.2), 0 10px 10px -5px rgba(217, 30, 39, 0.1);
-}
-
-.city-tag:hover::before {
-    background-color: white;
-    transform: scale(1.5);
 }
 
 .city-tag.featured {
