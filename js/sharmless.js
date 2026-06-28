@@ -15,7 +15,7 @@ window.sharmlessData = [
         name: "Bani",
         age: 19,
         location: "Jharkhand",
-        avatar: "https://files.catbox.moe/1rngwd.jpg",
+        avatar: "https://files.catbox.moe/h11lia.jpg",
         sharmLessScore: "95%",
         level: "Sharm King",
         levelClass: "legendary"
