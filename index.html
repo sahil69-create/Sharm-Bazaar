@@ -137,6 +137,7 @@
                 <a href="#calculator" class="nav-link">Calculator</a>
                 <a href="#testimonials" class="nav-link">Reviews</a>
                 <a href="buyers.html" class="nav-link">Top Buyers</a>
+                <a href="sharmless.html" class="nav-link">Top Sharmless</a>
                 <a href="https://kryzome.vercel.app/" target="_blank" rel="noopener" class="btn-primary">Owner Profile</a>
             </div>
             <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="mobile-menu-btn">
@@ -152,6 +153,7 @@
                 <a href="#calculator" onclick="toggleMobileMenu()" class="mobile-nav-link">Calculator</a>
                 <a href="#testimonials" onclick="toggleMobileMenu()" class="mobile-nav-link">Reviews</a>
                 <a href="buyers.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Top Buyers</a>
+                <a href="sharmless.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Top Sharmless</a>
                 <div class="mt-4 px-4">
                     <a href="https://kryzome.vercel.app/" target="_blank" class="hero-btn">Owner Profile</a>
                 </div>
@@ -459,6 +461,23 @@
             </div>
             <div id="top-buyers-container" class="buyers-grid">
                 <!-- Buyers will be rendered here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Sharmless Preview Section -->
+    <section id="top-sharmless" class="buyers-section">
+        <div class="max-container">
+            <div class="text-center mb-16 flex flex-col gap-4">
+                <h2 class="text-4xl font-bold">Our Top Sharmless Legends</h2>
+                <p class="text-slate-600">These iconic individuals have achieved the impossible: zero sharm.</p>
+                <a href="sharmless.html" class="btn-primary" style="align-self: center; margin-top: 1rem;">
+                    View All Sharmless
+                    <i data-lucide="arrow-right" style="width: 1.25rem; height: 1.25rem; margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+            <div id="top-sharmless-container" class="buyers-grid">
+                <!-- Sharmless will be rendered here by JS -->
             </div>
         </div>
     </section>
@@ -891,5 +910,6 @@
     <script src="js/calculator.js?v=1.1" defer></script>
     <script src="js/utils.js?v=1.1" defer></script>
     <script src="js/buyers.js?v=1.1" defer></script>
+    <script src="js/sharmless.js?v=1.1" defer></script>
 </body>
 </html>
