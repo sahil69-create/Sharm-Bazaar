@@ -42,10 +42,10 @@ window.sharmlessData = [
     },
     {
         id: 5,
-        name: "Your Ex",
-        age: "Unknown",
+        name: "Aryan Ghanghas",
+        age: "19",
         location: "Everywhere",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
+        avatar: "https://files.catbox.moe/x44d1o.PNG",
         sharmLessScore: "100%",
         level: "Sharm God",
         levelClass: "legendary"
