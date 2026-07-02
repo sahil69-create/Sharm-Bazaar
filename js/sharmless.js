@@ -55,7 +55,7 @@ window.sharmlessData = [
         name: "Ankush",
         age: 19,
         location: "Gohana, Hisar",
-        avatar: "https://files.catbox.moe/5bg3sh.jpg",
+        avatar: "https://files.catbox.moe/sqvd3x.jpg",
         sharmLessScore: "75%",
         level: "Sharm Begone",
         levelClass: "chillar"
