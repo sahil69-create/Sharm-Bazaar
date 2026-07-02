@@ -52,10 +52,10 @@ window.sharmlessData = [
     },
     {
         id: 6,
-        name: "That One Relative",
-        age: 65,
-        location: "Your Home",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
+        name: "Ankush",
+        age: 19,
+        location: "Gohana, Hisar",
+        avatar: "https://files.catbox.moe/5bg3sh.jpg",
         sharmLessScore: "75%",
         level: "Sharm Begone",
         levelClass: "chillar"
