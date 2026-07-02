@@ -44,7 +44,7 @@ window.sharmlessData = [
         id: 5,
         name: "Aryan Ghanghas",
         age: "19",
-        location: "Everywhere",
+        location: "Haryana",
         avatar: "https://files.catbox.moe/x44d1o.PNG",
         sharmLessScore: "100%",
         level: "Sharm God",
