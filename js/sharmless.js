@@ -59,8 +59,50 @@ window.sharmlessData = [
         sharmLessScore: "75%",
         level: "Sharm Begone",
         levelClass: "chillar"
+    },
+    {
+        id: 7,
+        name: "Anurag Kashyap",
+        age: 52,
+        location: "Mumbai",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        sharmLessScore: "92%",
+        level: "Zero Sharm",
+        levelClass: "ultra-premium"
+    },
+    {
+        id: 8,
+        name: "Riya Sharma",
+        age: 25,
+        location: "Bangalore",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        sharmLessScore: "85%",
+        level: "Sharm Hunter",
+        levelClass: "pro-max"
+    },
+    {
+        id: 9,
+        name: "Rajesh Kumar",
+        age: 35,
+        location: "Delhi",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        sharmLessScore: "78%",
+        level: "Sharm Begone",
+        levelClass: "chillar"
+    },
+    {
+        id: 10,
+        name: "Your Neighbour",
+        age: 40,
+        location: "Next Door",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        sharmLessScore: "98%",
+        level: "Sharm King",
+        levelClass: "legendary"
     }
 ];
+
+window.sharmlessShowAll = false;
 
 // Render Top Sharmless Section
 window.renderTopSharmless = function() {
@@ -75,9 +117,21 @@ window.renderTopSharmless = function() {
                          document.title.toLowerCase().includes('top sharmless') ||
                          container.classList.contains('buyers-grid-full');
     
-    const sharmlessToShow = isSharmlessPage ? sharmless : sharmless.slice(0, 3);
+    let sharmlessToShow;
+    let showButton = false;
+    
+    if (isSharmlessPage) {
+        if (window.sharmlessShowAll) {
+            sharmlessToShow = sharmless;
+        } else {
+            sharmlessToShow = sharmless.slice(0, 6);
+            if (sharmless.length > 6) showButton = true;
+        }
+    } else {
+        sharmlessToShow = sharmless.slice(0, 3);
+    }
 
-    container.innerHTML = sharmlessToShow.map(person => `
+    let html = sharmlessToShow.map(person => `
         <div class="buyer-card">
             <div class="flex items-center gap-4">
                 <img src="${person.avatar}" alt="${person.name}" class="buyer-avatar" loading="lazy" decoding="async" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=${person.name.split(' ')[0]}&backgroundColor=d91e27'">
@@ -99,9 +153,26 @@ window.renderTopSharmless = function() {
         </div>
     `).join('');
 
+    if (showButton) {
+        html += `
+            <div style="grid-column: 1 / -1; text-align: center;">
+                <button onclick="window.toggleSharmlessShowAll()" class="btn-primary" style="margin-top: 1rem;">
+                    ${window.sharmlessShowAll ? 'Show Less' : 'Show More Profiles'}
+                </button>
+            </div>
+        `;
+    }
+
+    container.innerHTML = html;
+
     if (window.lucide) {
         window.lucide.createIcons();
     }
+};
+
+window.toggleSharmlessShowAll = function() {
+    window.sharmlessShowAll = !window.sharmlessShowAll;
+    window.renderTopSharmless();
 };
 
 // Auto-run with multiple triggers
