@@ -59,8 +59,70 @@ window.buyersData = [
         purchases: "15K",
         level: "Chillar",
         levelClass: "chillar"
+    },
+    {
+        id: 7,
+        name: "Shubham Bhagat",
+        age: 22,
+        location: "Sahibgand, Jharkhand",
+        avatar: "https://files.catbox.moe/5hize6.jpg",
+        purchases: "55K",
+        level: "Ultra Premium",
+        levelClass: "ultra-premium"
+    },
+    {
+        id: 8,
+        name: "Priyanka Gandhi",
+        age: 53,
+        location: "New Delhi",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        purchases: "22K",
+        level: "Legend",
+        levelClass: "legendary"
+    },
+    {
+        id: 9,
+        name: "Rahul Gandhi",
+        age: 54,
+        location: "Wayanad, Kerala",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        purchases: "48K",
+        level: "Legendary",
+        levelClass: "legendary"
+    },
+    {
+        id: 10,
+        name: "Yogi Adityanath",
+        age: 52,
+        location: "Lucknow, Uttar Pradesh",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        purchases: "89K",
+        level: "Legendary",
+        levelClass: "legendary"
+    },
+    {
+        id: 11,
+        name: "Mamata Banerjee",
+        age: 69,
+        location: "Kolkata, West Bengal",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        purchases: "35K",
+        level: "Ultra Premium",
+        levelClass: "ultra-premium"
+    },
+    {
+        id: 12,
+        name: "Akshay Kumar",
+        age: 56,
+        location: "Mumbai, Maharashtra",
+        avatar: "https://files.catbox.moe/ppuzvy.png",
+        purchases: "72K",
+        level: "Legend",
+        levelClass: "legendary"
     }
 ];
+
+window.buyersShowAll = false;
 
 // Render Top Buyers Section
 window.renderTopBuyers = function() {
@@ -75,9 +137,21 @@ window.renderTopBuyers = function() {
                          document.title.toLowerCase().includes('top buyers') ||
                          container.classList.contains('buyers-grid-full');
     
-    const buyersToShow = isBuyersPage ? buyers : buyers.slice(0, 3);
+    let buyersToShow;
+    let showButton = false;
+    
+    if (isBuyersPage) {
+        if (window.buyersShowAll) {
+            buyersToShow = buyers;
+        } else {
+            buyersToShow = buyers.slice(0, 6);
+            if (buyers.length > 6) showButton = true;
+        }
+    } else {
+        buyersToShow = buyers.slice(0, 3);
+    }
 
-    container.innerHTML = buyersToShow.map(buyer => `
+    let html = buyersToShow.map(buyer => `
         <div class="buyer-card">
             <div class="flex items-center gap-4">
                 <img src="${buyer.avatar}" alt="${buyer.name}" class="buyer-avatar" loading="lazy" decoding="async" onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=${buyer.name.split(' ')[0]}&backgroundColor=d91e27'">
@@ -99,9 +173,26 @@ window.renderTopBuyers = function() {
         </div>
     `).join('');
 
+    if (showButton) {
+        html += `
+            <div style="grid-column: 1 / -1; text-align: center;">
+                <button onclick="window.toggleBuyersShowAll()" class="btn-primary" style="margin-top: 1rem;">
+                    ${window.buyersShowAll ? 'Show Less' : 'Show More Profiles'}
+                </button>
+            </div>
+        `;
+    }
+
+    container.innerHTML = html;
+
     if (window.lucide) {
         window.lucide.createIcons();
     }
+};
+
+window.toggleBuyersShowAll = function() {
+    window.buyersShowAll = !window.buyersShowAll;
+    window.renderTopBuyers();
 };
 
 // Auto-run with multiple triggers
