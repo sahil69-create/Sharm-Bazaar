@@ -102,7 +102,7 @@ window.sharmlessData = [
     }
 ];
 
-window.sharmlessShowAll = false;
+window.sharmlessShowAll = true;
 
 // Render Top Sharmless Section
 window.renderTopSharmless = function() {
