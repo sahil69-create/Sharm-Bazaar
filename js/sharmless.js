@@ -62,10 +62,10 @@ window.sharmlessData = [
     },
     {
         id: 7,
-        name: "Anurag Kashyap",
-        age: 52,
-        location: "Mumbai",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
+        name: "Sayanta Das",
+        age: 17,
+        location: "Kolkata, West Bangal",
+        avatar: "https://www.dl.dropboxusercontent.com/scl/fi/hrxbbnkn675fyiqygd23x/sayanta.jpeg?rlkey=70cnedz3zffq93zvkn1i6s7rh&st=qocftfdy&dl=0",
         sharmLessScore: "92%",
         level: "Zero Sharm",
         levelClass: "ultra-premium"
