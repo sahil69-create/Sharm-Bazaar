@@ -72,10 +72,10 @@ window.sharmlessData = [
     },
     {
         id: 8,
-        name: "Riya Sharma",
-        age: 25,
-        location: "Bangalore",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
+        name: "Krishna Goswami",
+        age: 21,
+        location: "Ghaziabad, Uttar Pradesh",
+        avatar: "https://files.catbox.moe/tl95hg.png",
         sharmLessScore: "85%",
         level: "Sharm Hunter",
         levelClass: "pro-max"
