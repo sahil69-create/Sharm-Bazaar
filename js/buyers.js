@@ -12,10 +12,10 @@ window.buyersData = [
     },
     {
         id: 2,
-        name: "Dharmendra Pradhan",
-        age: 56,
-        location: "New Delhi",
-        avatar: "https://files.catbox.moe/ej0cc4.jpg",
+        name: "Pralhad Joshi",
+        age: 63,
+        location: "Hubballi, Karnataka",
+        avatar: "https://files.catbox.moe/rhu0dy.jpg",
         purchases: "78K",
         level: "Legend",
         levelClass: "legendary"
