@@ -52,10 +52,10 @@ window.buyersData = [
     },
     {
         id: 6,
-        name: "Dilip Ghosh",
-        age: 61,
-        location: "Sector-5 Metro Station, Kolkata, West Bengal",
-        avatar: "https://files.catbox.moe/y4uucf.jpg",
+        name: "Yogi Adityanath",
+        age: 54,
+        location: "Kalidas Marg, Lucknow",
+        avatar: "https://files.catbox.moe/1eujsi.jpg",
         purchases: "15K",
         level: "Chillar",
         levelClass: "chillar"
@@ -72,13 +72,13 @@ window.buyersData = [
     },
     {
         id: 8,
-        name: "Priyanka Gandhi",
-        age: 53,
-        location: "New Delhi",
-        avatar: "https://files.catbox.moe/ppuzvy.png",
-        purchases: "22K",
-        level: "Legend",
-        levelClass: "legendary"
+        name: "Dilip Ghosh",
+        age: 61,
+        location: "Sector-5 Metro Station, Kolkata, West Bengal",
+        avatar: "https://files.catbox.moe/y4uucf.jpg",
+        purchases: "15K",
+        level: "Chillar",
+        levelClass: "chillar"
     },
     {
         id: 9,
