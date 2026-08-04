@@ -43,7 +43,7 @@ window.buyersData = [
     {
         id: 5,
         name: "Bhagwant Mann",
-        age: 79,
+        age: 52,
         location: "Sector 1, Chandigarh",
         avatar: "https://files.catbox.moe/kl8cx8.webp",
         purchases: "83.7K",
