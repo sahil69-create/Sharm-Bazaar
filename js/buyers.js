@@ -42,11 +42,11 @@ window.buyersData = [
     },
     {
         id: 5,
-        name: "Donald Trump",
+        name: "Bhagwant Mann",
         age: 79,
-        location: "Mumbai, Maharashtra",
-        avatar: "buyers/pig.jfif",
-        purchases: "10",
+        location: "Sector 1, Chandigarh",
+        avatar: "https://files.catbox.moe/kl8cx8.webp",
+        purchases: "83.7K",
         level: "Pro Max",
         levelClass: "pro-max"
     },
