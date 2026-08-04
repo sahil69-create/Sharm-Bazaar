@@ -1,7 +1,17 @@
 // --- Top Sharmless Data ---
 window.sharmlessData = [
-    {
+   {
         id: 1,
+        name: "picKacHu",
+        age: 19,
+        location: "Punjab",
+        avatar: "https://files.catbox.moe/jacrj6.jpg",
+        sharmLessScore: "98%",
+        level: "Sharm King",
+        levelClass: "legendary"
+    }
+    {
+        id: 2,
         name: "Rohit Kumar",
         age: 20,
         location: "Jhajjar, Haryana",
@@ -11,7 +21,7 @@ window.sharmlessData = [
         levelClass: "ultra-premium"
     },
     {
-        id: 2,
+        id: 3,
         name: "Bani",
         age: 19,
         location: "Jharkhand",
@@ -21,7 +31,7 @@ window.sharmlessData = [
         levelClass: "legendary"
     },
     {
-        id: 3,
+        id: 4,
         name: "Reja Khan",
         age: 24,
         location: "Kolkata",
@@ -31,7 +41,7 @@ window.sharmlessData = [
         levelClass: "pro-max"
     },
     {
-        id: 4,
+        id: 5,
         name: "Sahil Jangra",
         age: 21,
         location: "Hisar, Haryana",
@@ -41,7 +51,7 @@ window.sharmlessData = [
         levelClass: "pro-max"
     },
     {
-        id: 5,
+        id: 6,
         name: "Aryan Ghanghas",
         age: "19",
         location: "Jind, Haryana",
@@ -51,7 +61,7 @@ window.sharmlessData = [
         levelClass: "legendary"
     },
     {
-        id: 6,
+        id: 7,
         name: "Ankush",
         age: 19,
         location: "Gohana, Hisar",
@@ -61,7 +71,7 @@ window.sharmlessData = [
         levelClass: "chillar"
     },
     {
-        id: 7,
+        id: 8,
         name: "Sayanta Das",
         age: 17,
         location: "Kolkata, West Bangal",
@@ -71,7 +81,7 @@ window.sharmlessData = [
         levelClass: "ultra-premium"
     },
     {
-        id: 8,
+        id: 9,
         name: "Krishna Goswami",
         age: 21,
         location: "Ghaziabad, Uttar Pradesh",
@@ -81,7 +91,7 @@ window.sharmlessData = [
         levelClass: "pro-max"
     },
     {
-        id: 9,
+        id: 10,
         name: "Rajesh Kumar",
         age: 35,
         location: "Delhi",
