@@ -32,10 +32,10 @@ window.buyersData = [
     },
     {
         id: 4,
-        name: "Arvind Kejriwal",
-        age: 57,
-        location: "Lodhi Estate, New Delhi",
-        avatar: "https://files.catbox.moe/4flpgi.jpg",
+        name: "Amit Shah",
+        age: 61,
+        location: "North Block, New Delhi",
+        avatar: "https://files.catbox.moe/4q60hm.jpg",
         purchases: "1.7K",
         level: "Pro Max",
         levelClass: "pro-max"
@@ -62,13 +62,13 @@ window.buyersData = [
     },
     {
         id: 7,
-        name: "Shubham Bhagat",
-        age: 22,
-        location: "Sahibgand, Jharkhand",
-        avatar: "https://files.catbox.moe/5hize6.jpg",
-        purchases: "55K",
-        level: "Ultra Premium",
-        levelClass: "ultra-premium"
+        name: "Arvind Kejriwal",
+        age: 57,
+        location: "Lodhi Estate, New Delhi",
+        avatar: "https://files.catbox.moe/4flpgi.jpg",
+        purchases: "1.7K",
+        level: "Pro Max",
+        levelClass: "pro-max"
     },
     {
         id: 8,
