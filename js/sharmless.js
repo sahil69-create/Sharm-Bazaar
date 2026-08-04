@@ -9,7 +9,7 @@ window.sharmlessData = [
         sharmLessScore: "98%",
         level: "Sharm King",
         levelClass: "legendary"
-    }
+    },
     {
         id: 2,
         name: "Rohit Kumar",
