@@ -123,7 +123,7 @@
     }
     </script>
 </head>
-<body class="loaded">
+<body class="loaded storefront-page">
 
     <!-- Navbar -->
     <nav class="navbar glass">
@@ -138,6 +138,7 @@
                 <a href="#testimonials" class="nav-link">Reviews</a>
                 <a href="buyers.html" class="nav-link">Top Buyers</a>
                 <a href="sharmless.html" class="nav-link">Top Sharmless</a>
+                <a href="https://www.sharmbazaar.online/" class="nav-link">Donate</a>
                 <a href="https://kryzome.vercel.app/" target="_blank" rel="noopener" class="btn-primary">Owner Profile</a>
             </div>
             <button onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="mobile-menu-btn">
@@ -154,6 +155,7 @@
                 <a href="#testimonials" onclick="toggleMobileMenu()" class="mobile-nav-link">Reviews</a>
                 <a href="buyers.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Top Buyers</a>
                 <a href="sharmless.html" onclick="toggleMobileMenu()" class="mobile-nav-link">Top Sharmless</a>
+                <a href="https://www.sharmbazaar.online/" onclick="toggleMobileMenu()" class="mobile-nav-link">Donate</a>
                 <div class="mt-4 px-4">
                     <a href="https://kryzome.vercel.app/" target="_blank" class="hero-btn">Owner Profile</a>
                 </div>
@@ -187,10 +189,14 @@
             </div>
             <div class="relative">
                 <div class="absolute inset-0" style="background-color: rgba(255, 255, 255, 0.15); filter: blur(48px); border-radius: 9999px;"></div>
-                <img src="https://illustrations.popsy.co/white/falling.svg" alt="Lost Sharm in Delhi Mumbai Bangalore - SharmBazaar Illustration" width="512" height="512" fetchpriority="high" decoding="async" class="relative z-10 w-full" style="max-width: 32rem; margin: 0 auto; transition: transform 0.5s;">
+                <img src="https://files.catbox.moe/97oasv.svg" alt="Lost Sharm in Delhi Mumbai Bangalore - SharmBazaar Illustration" width="512" height="512" fetchpriority="high" decoding="async" class="relative z-10 w-full" style="max-width: 32rem; margin: 0 auto; transition: transform 0.5s;">
             </div>
         </div>
     </section>
+
+    <div class="max-container adsense-slot adsense-slot-leaderboard" data-ad-placement="after-hero" aria-label="Advertisement space">
+        <span>Advertisement space</span>
+    </div>
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
@@ -290,6 +296,10 @@
             </div>
         </div>
     </section>
+
+    <div class="max-container adsense-slot" data-ad-placement="after-products" aria-label="Advertisement space">
+        <span>Advertisement space</span>
+    </div>
 
     <!-- Trust Badges -->
     <section class="badges-section">
@@ -582,6 +592,10 @@
         </div>
     </section>
 
+    <div class="max-container adsense-slot" data-ad-placement="before-footer" aria-label="Advertisement space">
+        <span>Advertisement space</span>
+    </div>
+
     <!-- Service Areas for Local SEO -->
     <section class="service-areas-section border-t border-slate-100">
         <div class="max-container service-areas-container text-center">
@@ -672,13 +686,6 @@
                     <p class="text-sm" style="max-width: 20rem;">The world's first and only marketplace for dignity, respect, and sanskar.</p>
                 </div>
                 
-                <div class="footer-socials">
-                    <a href="#" aria-label="Facebook" class="social-link"><i data-lucide="facebook"></i></a>
-                    <a href="#" aria-label="Instagram" class="social-link"><i data-lucide="instagram"></i></a>
-                    <a href="#" aria-label="YouTube" class="social-link"><i data-lucide="youtube"></i></a>
-                    <a href="#" aria-label="LinkedIn" class="social-link"><i data-lucide="linkedin"></i></a>
-                </div>
-
                 <div class="text-center flex flex-col gap-2">
                     <p class="text-sm font-bold text-white">Contact Fake Support</p>
                     <p class="text-xs">help@sharmbazaar.in (They are too shy to reply)</p>
@@ -711,28 +718,55 @@
             <!-- Eligibility Form -->
             <div id="eligibility-form" class="flex flex-col gap-8">
                 <div class="flex flex-col gap-4">
-                    <p class="font-bold text-slate-800">1. Aunty ne recently "Beta, shaadi kab kar rahe?" pucha?</p>
+                    <p class="font-bold text-slate-800">1. Family group me aapki embarrassing photo kisne bheji?</p>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="selectOption(1, 'Haan, kal hi')" class="option-btn">Haan, kal hi</button>
-                        <button onclick="selectOption(1, 'Hafta pehle')" class="option-btn">Hafta pehle</button>
-                        <button onclick="selectOption(1, 'Har din')" class="option-btn col-span-2">Har din (Aunty ka favourite topic)</button>
+                        <button onclick="selectOption(1, 'Mummy ne')" class="option-btn">Mummy ne</button>
+                        <button onclick="selectOption(1, 'Chachaji ne')" class="option-btn">Chachaji ne</button>
+                        <button onclick="selectOption(1, 'Maine galti se khud')" class="option-btn col-span-2">Maine galti se khud status laga diya</button>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-4">
-                    <p class="font-bold text-slate-800">2. Sharma Ji ka beta abhi kya kar raha hai?</p>
+                    <p class="font-bold text-slate-800">2. Aapke phone ki battery 1% par hai. Aap kya karenge?</p>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="selectOption(2, 'Google pe job')" class="option-btn">Google pe job</button>
-                        <button onclick="selectOption(2, 'IISc me PhD')" class="option-btn">IISc me PhD</button>
-                        <button onclick="selectOption(2, 'Mere se 2 saal chhota')" class="option-btn col-span-2">Mere se 2 saal chhota, par sabse zyada kama raha</button>
+                        <button onclick="selectOption(2, 'Charger dhoondunga')" class="option-btn">Charger dhoondunga</button>
+                        <button onclick="selectOption(2, 'Reel dekhunga')" class="option-btn">Ek last reel dekhunga</button>
+                        <button onclick="selectOption(2, 'Power bank bhi 0%')" class="option-btn col-span-2">Power bank bhi 0% hoga, obviously</button>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-4">
-                    <p class="font-bold text-slate-800">3. Last family function me aap kya the?</p>
+                    <p class="font-bold text-slate-800">3. Online meeting me "You are on mute" sunke aapne kya kiya?</p>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="selectOption(3, 'Sab questions ka target')" class="option-btn col-span-2">Sab questions ka target</button>
-                        <button onclick="selectOption(3, 'Chupchap kha rahe the')" class="option-btn col-span-2">Chupchap kha rahe the</button>
+                        <button onclick="selectOption(3, '5 minute tak speech')" class="option-btn col-span-2">5 minute tak speech deta raha</button>
+                        <button onclick="selectOption(3, 'Camera off karke chup')" class="option-btn col-span-2">Camera off karke chup ho gaya</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-slate-800">4. Salary aate hi sabse pehle paisa kahan gaya?</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="selectOption(4, 'Food delivery')" class="option-btn">Food delivery me</button>
+                        <button onclick="selectOption(4, 'Gaming purchase')" class="option-btn">Gaming purchase me</button>
+                        <button onclick="selectOption(4, 'EMI ne le liya')" class="option-btn col-span-2">EMI ne aate hi le liya</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-slate-800">5. Aapka browser history sabke saamne khul jaye toh?</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="selectOption(5, 'Laptop band')" class="option-btn">Laptop turant band</button>
+                        <button onclick="selectOption(5, 'WiFi blame')" class="option-btn">WiFi ko blame karunga</button>
+                        <button onclick="selectOption(5, 'History clean')" class="option-btn col-span-2">Pehle se history clean rakhta hoon</button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <p class="font-bold text-slate-800">6. Weekend plan cancel hone par asli reaction kya hota hai?</p>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="selectOption(6, 'Khushi se ghar')" class="option-btn">Khushi se ghar par rahunga</button>
+                        <button onclick="selectOption(6, 'Fake sadness')" class="option-btn">Fake sadness, real relief</button>
+                        <button onclick="selectOption(6, 'Plan khud cancel')" class="option-btn col-span-2">Plan maine hi pehle cancel kiya tha</button>
                     </div>
                 </div>
 
