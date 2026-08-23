@@ -1,5 +1,5 @@
 // js/modal.js
-let selectedOptions = { 1: null, 2: null, 3: null };
+let selectedOptions = { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null };
 let selectedProduct = null;
 let razorpayOrderId = null;
 
@@ -43,7 +43,7 @@ function showScreen(id) {
 
 window.openModal = function(productName) {
     selectedProduct = productName;
-    selectedOptions = { 1: null, 2: null, 3: null };
+    selectedOptions = { 1: null, 2: null, 3: null, 4: null, 5: null, 6: null };
     document.querySelectorAll('.option-btn').forEach(btn => {
         btn.classList.remove('selected');
     });
@@ -86,7 +86,7 @@ window.selectOption = function(questionId, value) {
 };
 
 window.submitEligibility = function() {
-    if (!selectedOptions[1] || !selectedOptions[2] || !selectedOptions[3]) {
+    if (!selectedOptions[1] || !selectedOptions[2] || !selectedOptions[3] || !selectedOptions[4] || !selectedOptions[5] || !selectedOptions[6]) {
         alert("Please answer all questions!");
         return;
     }
